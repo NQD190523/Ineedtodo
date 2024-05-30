@@ -1,7 +1,9 @@
-package com.sideproject.ineedtodo;
+package com.sideproject.ineedtodo.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
+
+
 
 @RestController
 public class HelloController {
@@ -10,4 +12,9 @@ public class HelloController {
     public String hello(){
         return "Hello World";
     }
+    @GetMapping("/secured")
+    public String secured() {
+        return "Hello World, Secured";
+    }
+    
 }
