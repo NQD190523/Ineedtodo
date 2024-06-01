@@ -1,4 +1,4 @@
-package com.sideproject.ineedtodo;
+package com.sideproject.ineedtodo.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.env.EnvironmentPostProcessor;
