@@ -1,1 +1,1 @@
-org.springframework.boot.env.EnvironmentPostProcessor=com.sideproject.ineedtodo.DotenvEnvironmentPostProcessor
+org.springframework.boot.env.EnvironmentPostProcessor=com.sideproject.ineedtodo.config.DotenvEnvironmentPostProcessor

@@ -21,4 +21,16 @@ public class UserService {
     public User addUser(User user)  {
         return userRepository.save(user);
     }
+
+    public void processUserData(String name, String email) {
+        // Implement your business logic here
+        System.out.println("User name: " + name);
+        System.out.println("User email: " + email);
+        if(userRepository.findByEmail(email) == null){
+            User user = new User();
+            user.setName(name);
+            user.setEmail(email);
+            userRepository.save(user);
+        }
+    }
 }

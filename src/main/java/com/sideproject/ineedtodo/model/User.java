@@ -1,20 +1,22 @@
 package com.sideproject.ineedtodo.model;
 
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 @Document(collection = "User")
 public class User {
 
     @Id
     String id;
     String name;
-    
-    public User(String id, String name) {
-        this.id = id;
-        this.name = name;
+    String email;
+
+    public String getEmail() {
+        return email;
     }
-    
+    public void setEmail(String email) {
+        this.email = email;
+    }
     public String getId() {
         return id;
     }
@@ -27,6 +29,5 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-   
-    
+
 }
