@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/auth")
 public class User_task {
 
     @Autowired
@@ -24,7 +24,7 @@ public class User_task {
     public List<User> getUsers() {
         return userService.getUsers();
     }
-    @PostMapping("/add")
+    @PostMapping("/signup")
     public User addUser(@RequestBody User user) {
         return userService.addUser(user);
     }
