@@ -10,16 +10,17 @@ public class User {
 
     @Id
     String _id;
+    String username;
+    String fullName;
+    String password;
+    String email;
+    String imgUrl;
     Boolean isAdmin;
     List<Board> boards;
     List<Notification> notifications;
     String birthDay;
     String company;
     String phoneNumber;
-    String fullName;
-    String imgUrl;
-    String email;
-    String password;
     
     
     public String getPassword() {
@@ -89,6 +90,5 @@ public class User {
         this.imgUrl = imgUrl;
     }
 
-   
 
 }

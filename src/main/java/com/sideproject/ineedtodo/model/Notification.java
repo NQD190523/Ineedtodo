@@ -2,29 +2,30 @@ package com.sideproject.ineedtodo.model;
 
 public class Notification {
 
-    String _id;
-    User user;
-    String message;
+    MinUser byUser;
+    String content;
+    String createdAt;
 
     
-    public String get_id() {
-        return _id;
+    public MinUser getByUser() {
+        return byUser;
     }
-    public void set_id(String _id) {
-        this._id = _id;
+    public void setByUser(MinUser byUser) {
+        this.byUser = byUser;
     }
-    public User getUser() {
-        return user;
+    public String getContent() {
+        return content;
     }
-    public void setUser(User user) {
-        this.user = user;
+    public void setContent(String content) {
+        this.content = content;
     }
-    public String getMessage() {
-        return message;
+    public String getCreatedAt() {
+        return createdAt;
     }
-    public void setMessage(String message) {
-        this.message = message;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
+
 
     
 }

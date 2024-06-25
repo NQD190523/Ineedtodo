@@ -7,7 +7,7 @@ public class Task {
     String id;
     String name;
     String date;
-    List<User> members;
+    List<MinUser> members;
     String status;
     String priority;
     String duaDate;
@@ -16,8 +16,15 @@ public class Task {
     boolean isSelected;
     List<Post> posts;
     List<Tag> tags;
+    List<String> attachedImgs;
 
     
+    public List<String> getAttachedImgs() {
+        return attachedImgs;
+    }
+    public void setAttachedImgs(List<String> attachedImgs) {
+        this.attachedImgs = attachedImgs;
+    }
     public String getId() {
         return id;
     }
@@ -36,10 +43,10 @@ public class Task {
     public void setDate(String date) {
         this.date = date;
     }
-    public List<User> getMembers() {
+    public List<MinUser> getMembers() {
         return members;
     }
-    public void setMembers(List<User> members) {
+    public void setMembers(List<MinUser> members) {
         this.members = members;
     }
     public String getStatus() {

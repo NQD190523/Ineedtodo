@@ -27,7 +27,7 @@ public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint 
         if("XMLHttpRequest".equals(ajaxHeader)) {
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, authException.getMessage());
         } else {
-            response.sendRedirect(appConfig.getFrontendUrl()+"/#/login");
+            response.sendRedirect(appConfig.getFrontendUrl());
         }
     }
     
