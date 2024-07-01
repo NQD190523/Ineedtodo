@@ -2,15 +2,17 @@ package com.sideproject.ineedtodo.dto;
 
 import java.util.List;
 
+import org.springframework.security.core.userdetails.UserDetails;
+
 public class LoginResponse {
 
     String jwtToken;
-    String username;
+    UserDetails user;
     List<String> roles;
     
-	public LoginResponse(String jwtToken, String username, List<String> roles) {
+	public LoginResponse(String jwtToken, UserDetails user, List<String> roles) {
 		this.jwtToken = jwtToken;
-		this.username = username;
+		this.user = user;
 		this.roles = roles;
 	}
 	public String getJwtToken() {
@@ -19,11 +21,11 @@ public class LoginResponse {
 	public void setJwtToken(String jwtToken) {
 		this.jwtToken = jwtToken;
 	}
-	public String getUsername() {
-		return username;
+	public UserDetails getUsername() {
+		return user;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsername(UserDetails user) {
+		this.user = user;
 	}
 	public List<String> getRoles() {
 		return roles;

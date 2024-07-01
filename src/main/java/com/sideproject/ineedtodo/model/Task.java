@@ -2,8 +2,11 @@ package com.sideproject.ineedtodo.model;
 
 import java.util.List;
 
+import org.springframework.data.mongodb.core.mapping.Field;
+
 public class Task {
 
+    @Field("id")
     String id;
     String name;
     String date;
@@ -15,7 +18,7 @@ public class Task {
     String lastUpdated;
     boolean isSelected;
     List<Post> posts;
-    List<Tag> tags;
+    List<String> tags;
     List<String> attachedImgs;
 
     
@@ -91,10 +94,10 @@ public class Task {
     public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
-    public List<Tag> getTags() {
+    public List<String> getTags() {
         return tags;
     }
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
 

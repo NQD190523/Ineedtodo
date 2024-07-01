@@ -6,6 +6,10 @@ import com.sideproject.ineedtodo.model.BoardDetail;
 import com.sideproject.ineedtodo.service.BoardService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Role;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,14 +23,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/api")
 public class BoardController {
 
+    @Autowired
     private BoardService boardService;
 
-    @GetMapping("/board")
-    public String getBoard() {
-        return "hello world";
+    @GetMapping("/board/{id}")
+    public List<BoardDetail> getBoard(String id) {
+        return boardService.getBoards(id);
     }
     
-
     @PostMapping("/board")
     public BoardDetail postBoard(@RequestBody BoardDetail board) {
         return boardService.addBoard(board);

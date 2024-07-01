@@ -19,7 +19,7 @@ public class BoardService {
         return boardRepository.save(board);
     }
 
-    // public List<Board> getBoards(String userName) {
-    //     return boardRepository.findAll(Example.of(new Board().setBoardCreator(userName).setMembers(userName)));
-    // }
+    public List<BoardDetail> getBoards(String id) {
+        return boardRepository.findByUserId(id);
+    }
 }

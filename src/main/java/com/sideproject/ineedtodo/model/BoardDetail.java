@@ -2,20 +2,22 @@ package com.sideproject.ineedtodo.model;
 
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Board")
 public class BoardDetail {
 
-    String _id;
-    User boardCreator;
+    @Id
+    String id;
+    MinUser boardCreator;
     String name;
     String createdAt;
     String description;
     List<Member> members;
-    List<Group> group;
+    List<Group> groups;
     List<Task> tasks;
-    ActivityLog activityLog; 
+    List<ActivityLog> activityLog; 
 
     
     public List<Task> getTasks() {
@@ -24,10 +26,10 @@ public class BoardDetail {
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
     }
-    public User getBoardCreator() {
+    public MinUser getBoardCreator() {
         return boardCreator;
     }
-    public void setBoardCreator(User boardCreator) {
+    public void setBoardCreator(MinUser boardCreator) {
         this.boardCreator = boardCreator;
     }
     public String getName() {
@@ -55,42 +57,22 @@ public class BoardDetail {
         this.members = members;
     }
     public List<Group> getGroup() {
-        return group;
+        return groups;
     }
-    public void setGroup(List<Group> group) {
-        this.group = group;
+    public void setGroup(List<Group> groups) {
+        this.groups = groups;
     }
-    public ActivityLog getActivityLog() {
+    public List<ActivityLog> getActivityLog() {
         return activityLog;
     }
-    public void setActivityLog(ActivityLog activityLog) {
+    public void setActivityLog(List<ActivityLog> activityLog) {
         this.activityLog = activityLog;
     }
     public String get_id() {
-        return _id;
+        return id;
     }
-    public void set_id(String _id) {
-        this._id = _id;
-    }
-
-
-    public class Member {
-        MinUser member;
-        String lastSeen;
-
-        public MinUser getMember() {
-            return member;
-        }
-        public void setMember(MinUser member) {
-            this.member = member;
-        }
-        public String getLastSeen() {
-            return lastSeen;
-        }
-        public void setLastSeen(String lastSeen) {
-            this.lastSeen = lastSeen;
-        }
-    
+    public void set_id(String id) {
+        this.id = id;
     }
 
 }

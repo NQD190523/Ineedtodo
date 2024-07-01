@@ -9,6 +9,8 @@ import com.sideproject.ineedtodo.model.User;
 import com.sideproject.ineedtodo.service.CustomUserDetailsService;
 import com.sideproject.ineedtodo.service.UserService;
 
+import io.micrometer.core.ipc.http.HttpSender.Response;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +30,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/api/auth")
@@ -46,9 +50,16 @@ public class User_task {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @GetMapping
+    @GetMapping("/user")
     public List<User> getUsers() {
         return userService.getUsers();
+    }
+
+    @PostMapping("/user/email")
+    public ResponseEntity<User> getUserByEmail(@ RequestBody Map<String, String> request) {
+        String email = request.get("email");
+        User user = userService.getUserByEmail(email);
+        return ResponseEntity.ok(user);
     }
 
     @PostMapping("/signup")
@@ -77,11 +88,10 @@ public class User_task {
 
         List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority()).toList();
 
-        LoginResponse response = new LoginResponse(jwtToken, userDetails.getUsername(), roles);
+        LoginResponse response = new LoginResponse(jwtToken, userDetails, roles);
 
         return ResponseEntity.ok(response);
 
     }
 
-    
 }

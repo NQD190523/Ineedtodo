@@ -1,32 +1,20 @@
 package com.sideproject.ineedtodo.model;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
 
-public class MinUser {
+public class Member {
 
-    @Id
+    @Field("id")
     String id;
     String fullName;
     String imgUrl;
-    String email;
+    String lastSeen;
 
-    
+
     public String getId() {
         return id;
     }
     public void setId(String id) {
-        this.id = id;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public String get_id() {
-        return id;
-    }
-    public void set_id(String id) {
         this.id = id;
     }
     public String getFullName() {
@@ -41,4 +29,12 @@ public class MinUser {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
+    public String getLastSeen() {
+        return lastSeen;
+    }
+    public void setLastSeen(String lastSeen) {
+        this.lastSeen = lastSeen;
+    }
+
+   
 }

@@ -9,7 +9,7 @@ public class Group {
     String color;
     String lastUpdated;
     Boolean tagsShown;
-    List<Tag> tags;
+    List<String> tags;
     List<Task> tasks;
     
     public String getId() {
@@ -48,10 +48,10 @@ public class Group {
     public void setTagsShown(Boolean tagsShown) {
         this.tagsShown = tagsShown;
     }
-    public List<Tag> getTags() {
+    public List<String> getTags() {
         return tags;
     }
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
     public List<Task> getTasks() {
