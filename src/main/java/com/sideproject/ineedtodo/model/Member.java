@@ -7,9 +7,16 @@ public class Member {
     @Field("id")
     String id;
     String fullName;
+    String email;
     String imgUrl;
     String lastSeen;
-
+    
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getId() {
         return id;

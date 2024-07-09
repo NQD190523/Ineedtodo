@@ -13,7 +13,7 @@ public class BoardDetail {
     MinUser boardCreator;
     String name;
     String createdAt;
-    String description;
+    String desc;
     List<Member> members;
     List<Group> groups;
     List<Task> tasks;
@@ -45,10 +45,10 @@ public class BoardDetail {
         this.createdAt = createdAt;
     }
     public String getDescription() {
-        return description;
+        return desc;
     }
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String desc) {
+        this.desc = desc;
     }
     public List<Member> getMembers() {
         return members;

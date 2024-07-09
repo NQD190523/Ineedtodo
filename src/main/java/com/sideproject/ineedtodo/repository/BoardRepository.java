@@ -10,7 +10,7 @@ import com.sideproject.ineedtodo.model.BoardDetail;
 
 @Repository
 public interface BoardRepository extends MongoRepository<BoardDetail, String> {
-    @Query("{$or : [ {'members.id' : ?0}, {'boardCreator._id': ?0}]}")
+    @Query("{$or : [ {'members.id' : ?0}, {'boardCreator.id': ?0}]}")
     List<BoardDetail> findByUserId(String id);
 
 }

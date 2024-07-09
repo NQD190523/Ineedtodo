@@ -1,10 +1,10 @@
 package com.sideproject.ineedtodo.model;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 public class MinUser {
 
-    @Id
+    @Field("id")
     String id;
     String fullName;
     String imgUrl;

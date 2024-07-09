@@ -2,12 +2,19 @@ package com.sideproject.ineedtodo.model;
 
 public class ActivityLog {
 
+    String id;
     String createdAt;
     MinUser byUser;
-    String description;
+    String desc;
     Task taks;
 
     
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
     public String getCreatedAt() {
         return createdAt;
     }
@@ -21,10 +28,10 @@ public class ActivityLog {
         this.byUser = byUser;
     }
     public String getDescription() {
-        return description;
+        return desc;
     }
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String desc) {
+        this.desc = desc;
     }
     public Task getTaks() {
         return taks;

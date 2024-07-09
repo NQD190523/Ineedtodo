@@ -3,7 +3,6 @@ package com.sideproject.ineedtodo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import com.sideproject.ineedtodo.model.BoardDetail;
@@ -21,5 +20,20 @@ public class BoardService {
 
     public List<BoardDetail> getBoards(String id) {
         return boardRepository.findByUserId(id);
+    }
+
+    public void updateBoard(String id, BoardDetail board) {
+        boardRepository.findById(id).map(existBoard -> {
+            existBoard.setActivityLog(board.getActivityLog());
+            existBoard.setName(board.getName());
+            existBoard.setDescription(board.getDescription());
+            existBoard.setMembers(board.getMembers());
+            existBoard.setGroup(board.getGroup());
+            return boardRepository.save(existBoard);
+        });
+    }
+
+    public void deletedBoard(String id){
+        boardRepository.deleteById(id);
     }
 }
