@@ -1,24 +1,27 @@
 package com.sideproject.ineedtodo.model;
 
+
 import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Field;
+
+
 
 public class Task {
 
     @Field("id")
     String id;
     String name;
-    String date;
+    String createdAt;
     List<MinUser> members;
     String status;
     String priority;
-    String duaDate;
+    Long dueDate;
     List<String> updates;
     String lastUpdated;
     boolean isSelected;
     List<Post> posts;
-    List<String> tags;
+    List<Tag> tags;
     List<String> attachedImgs;
 
     
@@ -40,11 +43,11 @@ public class Task {
     public void setName(String name) {
         this.name = name;
     }
-    public String getDate() {
-        return date;
+    public String getCreatedAt() {
+        return createdAt;
     }
-    public void setDate(String date) {
-        this.date = date;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
     public List<MinUser> getMembers() {
         return members;
@@ -64,11 +67,11 @@ public class Task {
     public void setPriority(String priority) {
         this.priority = priority;
     }
-    public String getDuaDate() {
-        return duaDate;
+    public Long getDueDate() {
+        return dueDate;
     }
-    public void setDuaDate(String duaDate) {
-        this.duaDate = duaDate;
+    public void setDueDate(Long dueDate) {
+        this.dueDate = dueDate;
     }
     public List<String> getUpdates() {
         return updates;
@@ -94,10 +97,10 @@ public class Task {
     public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
-    public List<String> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
-    public void setTags(List<String> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 

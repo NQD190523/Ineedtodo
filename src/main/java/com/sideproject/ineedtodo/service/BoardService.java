@@ -19,7 +19,7 @@ public class BoardService {
     }
 
     public List<BoardDetail> getBoards(String id) {
-        return boardRepository.findByUserId(id);
+        return boardRepository.findByMemberIdOrBoardCreatorId(id);
     }
 
     public void updateBoard(String id, BoardDetail board) {

@@ -1,6 +1,7 @@
 package com.sideproject.ineedtodo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,6 +21,18 @@ public class UserService {
 
     public List<User> getUsers() {
         return userRepository.findAll();
+    }
+
+    public User getUserById(String id) {
+        Optional<User> user = userRepository.findById(id);
+        return user.orElseThrow( () -> new RuntimeException("User not found with id: " + id));
+    }
+
+    public void updateUser(String id, User user) {
+        userRepository.findById(id).map(existUser -> {
+            existUser.setNotifications(user.getNotifications());
+            return userRepository.save(existUser);
+        });
     }
 
     public User getUserByEmail(String email) {
