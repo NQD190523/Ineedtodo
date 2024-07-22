@@ -17,7 +17,7 @@ public class Task {
     String status;
     String priority;
     Long dueDate;
-    List<String> updates;
+    List<Update> updates;
     String lastUpdated;
     boolean isSelected;
     List<Post> posts;
@@ -73,10 +73,10 @@ public class Task {
     public void setDueDate(Long dueDate) {
         this.dueDate = dueDate;
     }
-    public List<String> getUpdates() {
+    public List<Update> getUpdates() {
         return updates;
     }
-    public void setUpdates(List<String> updates) {
+    public void setUpdates(List<Update> updates) {
         this.updates = updates;
     }
     public String getLastUpdated() {

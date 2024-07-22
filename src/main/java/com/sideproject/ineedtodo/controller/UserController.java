@@ -6,7 +6,6 @@ import com.sideproject.ineedtodo.component.JwtUtil;
 import com.sideproject.ineedtodo.dto.LoginRequest;
 import com.sideproject.ineedtodo.dto.LoginResponse;
 import com.sideproject.ineedtodo.model.User;
-import com.sideproject.ineedtodo.service.CustomUserDetailsService;
 import com.sideproject.ineedtodo.service.UserService;
 
 
@@ -34,14 +33,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping("/api/auth")
-public class User_task {
+public class UserController {
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private CustomUserDetailsService userDetailsService;
-
 
     @Autowired
     private JwtUtil jwtUtil;

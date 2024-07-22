@@ -9,13 +9,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-public class WebConfig implements WebMvcConfigurer {
+public class WebConfig implements WebMvcConfigurer  {
 
     @Autowired
    AppConfig appConfig;
 
     @Override
-    public void addCorsMappings(CorsRegistry registry) {
+    public void addCorsMappings(@SuppressWarnings("null") CorsRegistry registry) {
         registry.addMapping("/**")
         .allowedOrigins(appConfig.getFrontendUrl())
         .allowedMethods("GET","POST","PUT","DELETE")
